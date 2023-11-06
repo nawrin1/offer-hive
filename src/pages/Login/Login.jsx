@@ -9,7 +9,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
     const{loginUser,google}=useContext(AuthContext)
-    // const location=useLocation()
+    const location=useLocation()
     
     const navigate=useNavigate()
     const handleLogin=e=>{
@@ -28,10 +28,10 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
             })
-            navigate('/')
+            // navigate('/')
             
             
-            // navigate(location?.state? location.state:'/')  
+            navigate(location?.state? location.state:'/')  
         })
         .catch(error => {
             Swal.fire({
@@ -56,8 +56,8 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
             })
-            navigate('/')
-            // navigate(location?.state? location.state:'/')
+            // navigate('/')
+            navigate(location?.state? location.state:'/')
         })
         .catch(error=>{
             Swal.fire({

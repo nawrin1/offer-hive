@@ -1,0 +1,81 @@
+[
+  {
+      "category": "Web Development",
+      "description": "We are seeking a Front-end Web Developer to create a fully responsive e-commerce website that aims to boost online sales. In this role, you'll implement modern design trends, enhance user experience, and ensure seamless functionality. You'll work on crafting an appealing and functional online store that caters to a diverse customer base.",
+      "deadline": "2023-12-15",
+      "jobtitle": "Front-end Web Developer",
+      "price": 2500
+  },
+  {
+      "category": "Web Development",
+      "description": "We have an exciting opportunity for a WordPress Theme Developer to design and develop a custom WordPress theme tailored to the unique needs of our blog. Your role will be critical in ensuring optimal performance, aesthetics, and user-friendliness. As a WordPress Theme Developer, you'll create a theme that aligns with the blog's content and audience.",
+      "deadline": "2023-12-20",
+      "jobtitle": "WordPress Theme Developer",
+      "price": 1800
+  },
+  {
+      "category": "Web Development",
+      "description": "Join our team as a Full-Stack Web Developer to build a robust web application for online bookings and reservations. This role involves catering to diverse customer needs and requires expertise in full-stack development to provide a seamless experience from the front-end to the back-end.",
+      "deadline": "2023-12-31",
+      "jobtitle": "Full-Stack Web Developer",
+      "price": 3500
+  },
+  {
+      "category": "Web Development",
+      "description": "We're in need of a Web Performance Specialist to optimize a website, enhancing its speed and performance. Your role will involve implementing best practices to deliver a superior user experience. If you have a passion for improving web performance and user satisfaction, this position offers an exciting opportunity to make a real impact.",
+      "deadline": "2023-12-10",
+      "jobtitle": "Web Performance Specialist",
+      "price": 1200
+  },
+  {
+      "category": "Digital Marketing",
+      "description": "We're searching for a Social Media Marketing Specialist to craft and execute a creative and data-driven social media advertising campaign. Your mission is to increase brand visibility, engagement, and customer reach. If you're a social media expert with a flair for crafting engaging content and driving results, we want to hear from you.",
+      "deadline": "2023-11-30",
+      "jobtitle": "Social Media Marketing Specialist",
+      "price": 1500
+  },
+  {
+      "category": "Digital Marketing",
+      "description": "Are you a PPC Advertising Manager? We're looking for someone like you to manage and optimize pay-per-click (PPC) advertising campaigns. Your role will be crucial in maximizing ROI and effectively reaching the target audience. If you're passionate about data-driven advertising and have a track record of delivering results through PPC, we invite you to apply for this role.",
+      "deadline": "2023-12-25",
+      "jobtitle": "PPC Advertising Manager",
+      "price": 2000
+  },
+  {
+      "category": "Digital Marketing",
+      "description": "Join us as an Email Marketing Specialist to create compelling email marketing campaigns that nurture leads, build customer loyalty, and drive conversions. Leveraging segmentation and personalization, you'll engage subscribers effectively. If you have a passion for email marketing and a knack for crafting persuasive email content, we encourage you to apply for this position.",
+      "deadline": "2023-12-15",
+      "jobtitle": "Email Marketing Specialist",
+      "price": 1200
+  },
+  {
+      "category": "Digital Marketing",
+      "description": "We're seeking a Market And Research Analyst to conduct thorough market research and in-depth SEO analysis. Your insights will provide the foundation for informed marketing decisions. If you're a data enthusiast who enjoys uncovering market insights and leveraging data to drive marketing strategies, this role is tailor-made for you.",
+      "deadline": "2023-12-31",
+      "jobtitle": "Market And Research Analyst",
+      "price": 1800
+  },
+  {
+      "category": "Graphics Design",
+      "description": "Join our team as a Logo and Branding Designer to design a new company logo and complete branding materials. Your mission is to create a strong and memorable brand identity that resonates with customers.",
+      "deadline": "2023-12-10",
+      "jobtitle": "Logo and Branding Designer",
+      "price": 800
+  },
+  {
+      "category": "Graphics Design",
+      "description": "We're looking for a Social Media Graphics Designer to create captivating graphics for social media posts that resonate with the target audience and increase engagement. If you have a creative eye and the ability to create stunning graphics that captivate viewers, we encourage you to apply for this role.",
+      "deadline": "2023-12-20",
+      "jobtitle": "Social Media Graphics Designer",
+      "price": 1000
+  },
+  {
+      "category": "Graphics Design",
+      "description": "We have an exciting opportunity for a Promotional Materials Designer to create a range of promotional materials, including banners, flyers, and posters, for an upcoming product launch. Your designs will generate excitement and interest in the launch.",
+      "deadline": "2023-12-15",
+      "jobtitle": "Promotional Materials Designer",
+      "price": 900
+  }
+]
+
+  

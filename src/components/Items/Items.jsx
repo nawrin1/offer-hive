@@ -1,34 +1,62 @@
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Service from '../Service/Service';
 
 const Items = () => {
+    const [jobs, setJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([]);
+    
+    useEffect(() => {
+        fetch('/Jobs.json')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setJobs(data);
+                const services = data.filter(job => job.category === 'Web Development');
+                setFilteredJobs(services);
+            });
+    }, []); 
+    
+    const handleClicked = (e) => {
+        console.log(e);
+        const service = jobs.filter(job => job.category === e);
+        setFilteredJobs(service);
+    };
+    
+    console.log(filteredJobs, "jobbb");
+    
     return (
-        <div>
-                    <Tabs>
-            <TabList>
-            <Tab>Title 1</Tab>
-            <Tab>Title 2</Tab>
-            </TabList>
-
-            <TabPanel>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-        <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+        <div className='flex flex-col justify-center mx-auto my-20 px-4'>
+            <h2 className='text-4xl text-center font-Sora font-bold text-blue-950 mb-10'>Jobs Category</h2>
+            <div>
+                <Tabs>
+                    <TabList className="font-Sora font-bold text-center text-xl mb-10 ">
+                        <Tab onClick={() => handleClicked('Web Development')}>Web Development</Tab>
+                        <Tab onClick={() => handleClicked('Digital Marketing')}>Digital Marketing</Tab>
+                        <Tab onClick={() => handleClicked('Graphics Design')}>Graphics Design</Tab>
+                    </TabList>
+    
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-20'>
+                            {filteredJobs.map((service, idx) => <Service key={idx} service={service}></Service>)}
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-20'>
+                            {filteredJobs.map((service, idx) => <Service key={idx} service={service}></Service>)}
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-20'>
+                            {filteredJobs.map((service, idx) => <Service key={idx} service={service}></Service>)}
+                        </div>
+                    </TabPanel>
+                </Tabs>
             </div>
         </div>
-        </div>
-            </TabPanel>
-            <TabPanel>
-            <h2>Any content 2</h2>
-            </TabPanel>
-        </Tabs>
-            
-        </div>
     );
+    
 };
 
 export default Items;
