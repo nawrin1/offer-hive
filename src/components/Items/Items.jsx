@@ -8,7 +8,7 @@ const Items = () => {
     const [filteredJobs, setFilteredJobs] = useState([]);
     
     useEffect(() => {
-        fetch('/Jobs.json')
+        fetch('http://localhost:3000/jobs')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
