@@ -40,6 +40,11 @@ const Bidsrequest = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            location.reload()
+            setDisabledButtons(prevState => ({
+                ...prevState,
+                [_id]: { ...prevState[_id], accept: true },
+            }));
 
 
             
@@ -64,6 +69,12 @@ const Bidsrequest = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            location.reload()
+            setDisabledButtons(prevState => ({
+                ...prevState,
+                [_id]: { ...prevState[_id], reject: true },
+            }));
+            console.log(disabledButtons)
 
 
             
@@ -95,13 +106,19 @@ const Bidsrequest = () => {
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.price}</td>
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.status}</td>
                                 <th>
-                                    <button
+                                    {disabledButtons[bids._id]?.accept || disabledButtons[bids._id]?.reject?<button
                                         className="btn btn-outline btn-xs text-[11px]"
                                         onClick={() => handleAccept(bids._id)}
-                                        disabled={disabledButtons[bids._id]?.accept || disabledButtons[bids._id]?.reject}
+                                        disabled
                                     >
                                         Accept
-                                    </button>
+                                    </button>:<button
+                                        className="btn btn-outline btn-xs text-[11px]"
+                                        onClick={() => handleAccept(bids._id)}
+                                        
+                                    >
+                                        Accept
+                                    </button>}
                                 </th>
                                 <th>
                                     <button
