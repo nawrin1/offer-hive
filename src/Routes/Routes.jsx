@@ -10,6 +10,7 @@ import MyBids from "../pages/MyBids/MyBids";
 import Addjobs from "../pages/Addjobs/Addjobs";
 import MyPostedJob from "../pages/MyPostedJob/MyPostedJob";
 import Updated from "../pages/Updated/Updated";
+import Bidsrequest from "../pages/Bidsrequest/Bidsrequest";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,9 @@ const router = createBrowserRouter([
           path:'/update/:id',
           element:<Updated></Updated>,
           loader:({params})=>fetch(`http://localhost:3000/jobs/${params.id}`)
+        },{
+          path:'/request',
+          element:<PrivateRoute><Bidsrequest></Bidsrequest></PrivateRoute>
         }
       ]
     },

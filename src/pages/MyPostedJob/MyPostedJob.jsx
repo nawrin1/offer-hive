@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 const MyPostedJob = () => {
@@ -19,6 +20,46 @@ const MyPostedJob = () => {
                 console.log(data)
            })
     }, [url]);
+    const handleDelete=_id=>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:3000/jobs/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Deleted successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                           
+                            const remaining =allPosted.filter(posted => posted._id != _id);
+                            setAllPosted(remaining);
+        
+        
+        
+                        }
+                    })
+
+            }
+          });
+
+
+
+    }
     
     
     return (
@@ -56,7 +97,7 @@ const MyPostedJob = () => {
                             <Link to={`/update/${posted._id}`} ><button className="btn btn-outline font-Sora font-medium bg-green-900 text-white">Update</button></Link>
                         </div>
                         <div>
-                            <button className="btn btn-outline font-Sora font-medium bg-red-700 text-white">Delete</button>
+                            <button className="btn btn-outline font-Sora font-medium bg-red-700 text-white " onClick={()=>handleDelete(posted._id)}>Delete</button>
                         </div>
                         
                     </div>
