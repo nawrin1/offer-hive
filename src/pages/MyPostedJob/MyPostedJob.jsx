@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const MyPostedJob = () => {
@@ -52,7 +53,7 @@ const MyPostedJob = () => {
                     </div>
                     <div className="flex gap-2 ">
                         <div>
-                            <button className="btn btn-outline font-Sora font-medium bg-green-900 text-white">Update</button>
+                            <Link to={`/update/${posted._id}`} ><button className="btn btn-outline font-Sora font-medium bg-green-900 text-white">Update</button></Link>
                         </div>
                         <div>
                             <button className="btn btn-outline font-Sora font-medium bg-red-700 text-white">Delete</button>
