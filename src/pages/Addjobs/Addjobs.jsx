@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const Addjobs = () => {
     const {user}=useContext(AuthContext)
+    const navigate=useNavigate()
     const handleAddJobs=e=>{
         e.preventDefault()
         const category=e.target.category.value
@@ -34,7 +36,7 @@ const Addjobs = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                // navigate("/myBids")
+                navigate("/posted")
                 
             }
         })
