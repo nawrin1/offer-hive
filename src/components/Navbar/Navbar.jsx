@@ -15,7 +15,7 @@ const Navbar = () => {
     <li className="font-Sora font-medium"><NavLink to='/'>Home</NavLink></li>
     <li className="font-Sora font-medium"><NavLink to='/add'>Add Job</NavLink></li>
     <li className="font-Sora font-medium"><NavLink to='/posted'>My Posted Job</NavLink></li>
-    <li className="font-Sora font-medium"><NavLink to='/bids'>My Bids</NavLink></li>
+    <li className="font-Sora font-medium"><NavLink to='/myBids'>My Bids</NavLink></li>
     <li className="font-Sora font-medium"><NavLink to='/request'>Bids Requests</NavLink></li>
     
     </>
@@ -48,7 +48,7 @@ const Navbar = () => {
                 {navlinks}
                 </ul>
                 </div>
-                <p className="btn btn-ghost normal-case text-2xl font-Sora font-semibold"><SiWorkplace className="font-semibold"></SiWorkplace>Offer Hive</p>
+                <p className="btn btn-ghost normal-case lg:text-2xl md:text-2xl text-xl font-Sora font-semibold"><SiWorkplace className="font-semibold"></SiWorkplace>Offer Hive</p>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

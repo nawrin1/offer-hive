@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import {FaDollarSign} from 'react-icons/fa6'
 
 import img1 from '../../assets/7484902.jpg'
@@ -7,6 +7,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 const JobDetails = () => {
     const data=useLoaderData()
+    const navigate=useNavigate()
     console.log(data,"dattt")
     const {description,deadline,jobtitle,price,_id,email}=data
     console.log(email)
@@ -17,8 +18,10 @@ const JobDetails = () => {
         const deadline=e.target.deadline.value
         const userEmail=e.target.email.value
         const buyerEmail=e.target.bEmail.value
+        const title=e.target.title.value
+
         console.log(price,deadline,userEmail,buyerEmail)
-        const bids={price,deadline,userEmail,buyerEmail}
+        const bids={price,deadline,userEmail,buyerEmail,title,status:"pending"}
         fetch('http://localhost:3000/allBids', {
             method: 'POST', 
             headers: {
@@ -37,6 +40,8 @@ const JobDetails = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
+                navigate("/myBids")
+                
             }
         })
 
@@ -65,6 +70,14 @@ const JobDetails = () => {
             <form onSubmit={handleBids}>
                 
                 <div className="md:flex text-2xl font-Sora">
+                <div className="form-control md:w-1/2 w-full lg:w-1/2">
+                        <label className="label">
+                            <span className="">Job Title</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="title" defaultValue={jobtitle}placeholder="title" className="input input-bordered w-full" />
+                        </label>
+                    </div>
                     <div className="form-control md:w-1/2 w-full lg:w-1/2">
                         <label className="label">
                             <span className="">Price</span>

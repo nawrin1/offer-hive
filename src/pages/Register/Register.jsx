@@ -27,7 +27,7 @@ const Register = () => {
                 icon: 'success',
                 title: 'Your have registered successfully',
                 showConfirmButton: false,
-                timer: 950
+                timer:1000
             })
             updateProfile(result.user,{
                 displayName:name,
