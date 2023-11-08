@@ -22,6 +22,7 @@ const Items = () => {
         console.log(e);
         const service = jobs.filter(job => job.category === e);
         setFilteredJobs(service);
+        console.log(filteredJobs,"wwwwww")
     };
     
     console.log(filteredJobs, "jobbb");

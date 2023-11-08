@@ -9,7 +9,7 @@ const JobDetails = () => {
     const data=useLoaderData()
     const navigate=useNavigate()
     console.log(data,"dattt")
-    const {description,deadline,jobtitle,price,_id,email}=data
+    const {description,deadline,jobtitle,max,min,_id,email}=data
     console.log(email)
     const {user}=useContext(AuthContext)
     const handleBids=e=>{
@@ -55,7 +55,7 @@ const JobDetails = () => {
                     <div className="text-3xl font-Sora font-semibold">
                         <p className="mb-10 text-blue-900">Deadline:  {deadline}</p>
                         {/* <p>Price  Range:  {price} </p> */}
-                        <div className="flex"><p>Price  Range:  {price} </p><FaDollarSign></FaDollarSign></div>
+                        <div className="flex"><p>Price  Range:  {max}-{min} </p><FaDollarSign></FaDollarSign></div>
                     </div>
                 </div>
                 <div>

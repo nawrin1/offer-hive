@@ -2,7 +2,7 @@
 import{SiPeakdesign} from 'react-icons/si'
 import { Link } from 'react-router-dom';
 const Service = ({service}) => {
-    const {description,deadline,jobtitle,price,_id}=service
+    const {description,deadline,jobtitle,max,min,_id}=service
     console.log(_id)
     return (
         <div className="font-Sora bg-blue-200 p-8 rounded-3xl flex flex-col shadow-2xl shadow-slate-300">
@@ -17,7 +17,7 @@ const Service = ({service}) => {
 
              </div>
                 <div className=''>
-                    <p className="text-xl  font-medium">Price: {price}</p>
+                    <p className="text-xl  font-medium">Price: {max}-{min}</p>
 
                 </div>
 

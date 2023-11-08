@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Addjobs = () => {
@@ -13,6 +14,31 @@ const Addjobs = () => {
         const max=e.target.maximumPrice.value
         const min=e.target.minimumPrice.value
         const jobtitle=e.target.title.value
+        console.log(category,deadline,description,max,min,email,jobtitle)
+        const jobs={category,deadline,description,max,min,email,jobtitle}
+        fetch('http://localhost:3000/jobs', {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(jobs)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Jobs added Successfully ',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                // navigate("/myBids")
+                
+            }
+        })
+
 
 
     }
@@ -68,9 +94,9 @@ const Addjobs = () => {
                     <span className="label-text text-xl  ">Category</span>
                 </label>
                 <select name="category" id="" className="input input-bordered text-black ml-4 mt-4" >
-                    <option  >Web development</option>
-                    <option >Digital marketing</option>
-                    <option >Graphics design</option>
+                    <option  >Web Development</option>
+                    <option >Digital Marketing</option>
+                    <option >Graphics Design</option>
                     
                 </select>
                 </div>
