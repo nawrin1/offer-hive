@@ -54,10 +54,10 @@ const Bidsrequest = () => {
     
     const handleReject = (_id) => {
         
-        setDisabledButtons(prevState => ({
-            ...prevState,
-            [_id]: { ...prevState[_id], reject: true },
-        }));
+        // setDisabledButtons(prevState => ({
+        //     ...prevState,
+        //     [_id]: { ...prevState[_id], reject: true },
+        // }));
         const status={status:"rejected"}
         fetch(`http://localhost:3000/allBids/${_id}`, {
             method: 'PUT', 
@@ -106,28 +106,45 @@ const Bidsrequest = () => {
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.price}</td>
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.status}</td>
                                 <th>
-                                    {disabledButtons[bids._id]?.accept || disabledButtons[bids._id]?.reject?<button
-                                        className="btn btn-outline btn-xs text-[11px]"
-                                        onClick={() => handleAccept(bids._id)}
-                                        disabled
-                                    >
-                                        Accept
-                                    </button>:<button
-                                        className="btn btn-outline btn-xs text-[11px]"
-                                        onClick={() => handleAccept(bids._id)}
-                                        
-                                    >
-                                        Accept
-                                    </button>}
+                        {
+                        (disabledButtons[bids._id]?.accept || disabledButtons[bids._id]?.reject || bids.status === 'in progress' || bids.status === 'rejected'|| bids.status === 'complete') ? (
+                            <button
+                            className="btn btn-outline btn-xs text-[11px]"
+                            onClick={() => handleAccept(bids._id)}
+                            disabled
+                            >
+                            Accept
+                            </button>
+                        ) : (
+                            <button
+                            className="btn btn-outline btn-xs text-[11px]"
+                            onClick={() => handleAccept(bids._id)}
+                            >
+                            Accept
+                            </button>
+                        )
+                        }
                                 </th>
                                 <th>
-                                    <button
-                                        className="btn btn-outline btn-xs text-[11px]"
-                                        onClick={() => handleReject(bids._id)}
-                                        disabled={disabledButtons[bids._id]?.reject || disabledButtons[bids._id]?.accept}
-                                    >
-                                        Reject
-                                    </button>
+                                {
+                            (disabledButtons[bids._id]?.accept || disabledButtons[bids._id]?.reject || bids.status === 'in progress' || bids.status === 'rejected'|| bids.status === 'complete') ? (
+                                <button
+                                className="btn btn-outline btn-xs text-[11px]"
+                                onClick={() => handleReject(bids._id)}
+                                disabled
+                                >
+                                Reject
+                                </button>
+                            ) : (
+                                <button
+                                className="btn btn-outline btn-xs text-[11px]"
+                                onClick={() => handleReject(bids._id)}
+                                >
+                                Reject
+                                </button>
+                            )
+                            }
+
                                 </th>
                             </tr>
                         ))}
