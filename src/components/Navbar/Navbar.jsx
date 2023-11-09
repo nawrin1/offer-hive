@@ -13,10 +13,11 @@ const Navbar = () => {
 
     const navlinks=<>
     <li className="font-Sora font-medium"><NavLink to='/'>Home</NavLink></li>
+{user && <>
     <li className="font-Sora font-medium"><NavLink to='/add'>Add Job</NavLink></li>
     <li className="font-Sora font-medium"><NavLink to='/posted'>My Posted Job</NavLink></li>
     <li className="font-Sora font-medium"><NavLink to='/myBids'>My Bids</NavLink></li>
-    <li className="font-Sora font-medium"><NavLink to='/request'>Bids Requests</NavLink></li>
+    <li className="font-Sora font-medium"><NavLink to='/request'>Bids Requests</NavLink></li></>}
     
     </>
     const handleLogOut=()=>{
