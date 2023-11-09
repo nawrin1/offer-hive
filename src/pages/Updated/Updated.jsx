@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 
 const Updated = () => {
@@ -21,7 +22,7 @@ const Updated = () => {
         const jobtitle=e.target.title.value
         console.log(category,deadline,description,max,min,email,jobtitle)
         const updatedjobs={category,deadline,description,max,min,email,jobtitle}
-        fetch(`http://localhost:3000/jobs/${_id}`, {
+        fetch(`https://online-marketplace-server-beta.vercel.app/jobs/${_id}`, {
             method: 'PUT', 
             headers: {
                 'content-type': 'application/json'
@@ -47,6 +48,8 @@ const Updated = () => {
 
     }
     return (
+        <div>
+             <Helmet><title>Offer Hive | Update</title></Helmet>
         <div className="bg-[#c4e0e9] p-16">
             <h2 className="text-center font-bold text-4xl mb-20">Update Jobs</h2>
             
@@ -135,6 +138,7 @@ const Updated = () => {
 
 
         </form>
+    </div>
     </div>
 
     );

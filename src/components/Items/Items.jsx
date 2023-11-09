@@ -8,7 +8,7 @@ const Items = () => {
     const [filteredJobs, setFilteredJobs] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:3000/jobs')
+        fetch('https://online-marketplace-server-beta.vercel.app/jobs')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

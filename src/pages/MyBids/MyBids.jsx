@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const MyBids = () => {
@@ -8,7 +9,7 @@ const MyBids = () => {
       const [allBids, setAllBids] = useState([]);
       const [disappear, setDisappear] = useState({});
     
-      const url = `http://localhost:3000/allBids?userEmail=${user?.email}`;
+      const url = `https://online-marketplace-server-beta.vercel.app/allBids?userEmail=${user?.email}`;
     
       useEffect(() => {
         fetch(url)
@@ -33,7 +34,7 @@ const MyBids = () => {
     
         // Send the status update to the server
         const status = { status: 'complete' };
-        fetch(`http://localhost:3000/allBids/${_id}`, {
+        fetch(`https://online-marketplace-server-beta.vercel.app/allBids/${_id}`, {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',
@@ -48,6 +49,8 @@ const MyBids = () => {
       };
     
       return (
+        <div>
+            <Helmet><title>Offer Hive | My Bids</title></Helmet>
         <div className="min-h-screen max-w-6xl mx-auto my-7">
           <h2 className="text-center font-Sora font-bold text-4xl text-purple-800 mb-10">MY BIDS</h2>
           <div className="overflow-x-hidden">
@@ -85,6 +88,7 @@ const MyBids = () => {
               </tbody>
             </table>
           </div>
+        </div>
         </div>
       );
     

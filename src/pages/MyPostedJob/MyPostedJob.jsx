@@ -2,13 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 
 const MyPostedJob = () => {
     const { user } = useContext(AuthContext);
     const [allPosted, setAllPosted] = useState([]);
 
-    const url = `http://localhost:3000/jobs?email=${user?.email}`;
+    const url = `https://online-marketplace-server-beta.vercel.app/jobs?email=${user?.email}`;
 
     useEffect(() => {
 
@@ -31,7 +32,7 @@ const MyPostedJob = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/jobs/${_id}`, {
+                fetch(`https://online-marketplace-server-beta.vercel.app/jobs/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -62,7 +63,8 @@ const MyPostedJob = () => {
     }
     
     
-    return (
+    return (<div>
+        <Helmet><title>Offer Hive | My Posted Job</title></Helmet>
         < div className="min-h-screen max-w-6xl mx-auto my-7">
             <h2 className="text-4xl text-center font-Sora font-bold text-emerald-900">My Posted Job</h2>
             
@@ -127,6 +129,7 @@ const MyPostedJob = () => {
 
 
             
+        </div>
         </div>
     );
 

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const Bidsrequest = () => {
@@ -7,7 +8,7 @@ const Bidsrequest = () => {
     const [request, setRequest] = useState([]);
     const [disabledButtons, setDisabledButtons] = useState({});
     
-    const url = `http://localhost:3000/allBids?buyerEmail=${user?.email}`;
+    const url = `https://online-marketplace-server-beta.vercel.app/allBids?buyerEmail=${user?.email}`;
     
     useEffect(() => {
         fetch(url)
@@ -30,7 +31,7 @@ const Bidsrequest = () => {
             [_id]: { ...prevState[_id], accept: true },
         }));
         const status={status:"in progress"}
-        fetch(`http://localhost:3000/allBids/${_id}`, {
+        fetch(`https://online-marketplace-server-beta.vercel.app/allBids/${_id}`, {
             method: 'PUT', 
             headers: {
                 'content-type': 'application/json'
@@ -59,7 +60,7 @@ const Bidsrequest = () => {
         //     [_id]: { ...prevState[_id], reject: true },
         // }));
         const status={status:"rejected"}
-        fetch(`http://localhost:3000/allBids/${_id}`, {
+        fetch(`https://online-marketplace-server-beta.vercel.app/allBids/${_id}`, {
             method: 'PUT', 
             headers: {
                 'content-type': 'application/json'
@@ -82,6 +83,8 @@ const Bidsrequest = () => {
     };
     
     return (
+        <div>
+             <Helmet><title>Offer Hive | Bids Request</title></Helmet>
         <div className="min-h-screen max-w-6xl mx-auto my-7">
             <h2 className="text-center font-Sora font-bold text-4xl text-purple-800 mb-10">BIDS REQUESTS</h2>
             <div className="overflow-x-auto">
@@ -151,6 +154,7 @@ const Bidsrequest = () => {
                     </tbody>
                 </table>
             </div>
+        </div>
         </div>
     );
     

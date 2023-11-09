@@ -1,8 +1,8 @@
-# React + Vite
+#Offer Hive
+* People can post jobs,update information of posted job and can delete their jobs 
+* job Seekers can bid for particular jobs
+* Job Posters can see their bid request
+* Those who bid for can see their bids
+* Job posters can accept or reject their bids request
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Livelink:

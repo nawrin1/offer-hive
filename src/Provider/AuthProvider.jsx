@@ -2,6 +2,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,} from "firebase/auth";
 import app from "../firebase/firebase.config";
+import axios from "axios";
 const auth=getAuth(app)
 export const AuthContext=createContext(null)
 const AuthProvider = ({children}) => {
@@ -33,6 +34,24 @@ const AuthProvider = ({children}) => {
             console.log('cur user',currentUser)
             setUser(currentUser)
             setLoading(false)
+            const userEmail=currentUser?.email || user?.email
+            const loggedUser={email:userEmail}
+            
+            
+            
+            if (currentUser){
+              
+                axios.post(`https://online-marketplace-server-beta.vercel.app/jwt`,loggedUser,{withCredentials:true})
+                .then(res=>{console.log('token respomse',res.data)})
+                
+
+            }
+            else{
+                axios.post('https://online-marketplace-server-beta.vercel.app/logout',loggedUser,{withCredentials:true})
+                .then(res=>{console.log(res.data)})
+
+
+            }
             
             
 

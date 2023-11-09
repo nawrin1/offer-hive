@@ -4,6 +4,7 @@ import logins from '../../assets/Animation - 1699200707611.json'
 import Swal from 'sweetalert2'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -73,6 +74,7 @@ const Login = () => {
     }
     return (
                 <div>
+                     <Helmet><title>Offer Hive | Login</title></Helmet>
                     <div className="hero min-h-screen bg-base-200 font-Sora py-20">
         <div className="hero-content flex  lg:flex-row-reverse">
             <div className="text-center lg:text-left hidden lg:block md:block">

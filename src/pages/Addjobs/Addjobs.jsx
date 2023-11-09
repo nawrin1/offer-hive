@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Addjobs = () => {
@@ -18,7 +19,7 @@ const Addjobs = () => {
         const jobtitle=e.target.title.value
         console.log(category,deadline,description,max,min,email,jobtitle)
         const jobs={category,deadline,description,max,min,email,jobtitle}
-        fetch('http://localhost:3000/jobs', {
+        fetch('https://online-marketplace-server-beta.vercel.app/jobs', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +46,11 @@ const Addjobs = () => {
 
     }
     return (
-        <div className="bg-[#c4dde9] p-16">
+
+
+<div>
+    <Helmet><title>Offer Hive | Add Job</title></Helmet>
+<div className="bg-[#c4dde9] p-16">
             <h2 className="text-center font-bold text-4xl mb-20">Add Jobs</h2>
             
         <form onSubmit={handleAddJobs}>
@@ -134,6 +139,7 @@ const Addjobs = () => {
 
         </form>
     </div>
+</div>
 
     );
 };

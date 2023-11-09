@@ -5,6 +5,7 @@ import img1 from '../../assets/7484902.jpg'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 const JobDetails = () => {
     const data=useLoaderData()
     const navigate=useNavigate()
@@ -22,7 +23,7 @@ const JobDetails = () => {
 
         console.log(price,deadline,userEmail,buyerEmail)
         const bids={price,deadline,userEmail,buyerEmail,title,status:"pending"}
-        fetch('http://localhost:3000/allBids', {
+        fetch('https://online-marketplace-server-beta.vercel.app/allBids', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
@@ -47,6 +48,8 @@ const JobDetails = () => {
 
     }
     return (
+        <div>
+             <Helmet><title>Offer Hive | Details</title></Helmet>
         <div className="min-h-screen my-12 max-w-6xl mx-auto p-4">
             <h2 className="text-center font-bold font-Sora text-3xl lg:text-5xl md:text-4xl text-purple-900 mb-20">{jobtitle}</h2>
             <div className="flex">
@@ -82,7 +85,7 @@ const JobDetails = () => {
                         <label className="label">
                             <span className="">Price</span>
                         </label>
-                        <label className="input-group">
+                        <label className="input-group ml-1">
                             <input type="text" name="price" placeholder="price" className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -90,7 +93,7 @@ const JobDetails = () => {
                         <label className="label"> 
                             <span className="">Deadline</span>
                         </label>
-                        <label className="input-group">
+                        <label className="input-group ml-1">
                             <input type="date" name="deadline" placeholder="deadline" className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -135,6 +138,7 @@ const JobDetails = () => {
                 
             </div>
             
+        </div>
         </div>
     );
 };

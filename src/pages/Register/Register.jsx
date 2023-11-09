@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
     const{createUser}=useContext(AuthContext)
     const navigate=useNavigate()
@@ -27,7 +28,7 @@ const Register = () => {
                 icon: 'success',
                 title: 'Your have registered successfully',
                 showConfirmButton: false,
-                timer:1000
+                timer:1500
             })
             updateProfile(result.user,{
                 displayName:name,
@@ -38,7 +39,10 @@ const Register = () => {
 
             // location.reload()
             navigate('/')
-            location.reload()
+            // location.reload()
+            setTimeout(()=>{
+                location.reload()
+            },2000)
  
         })
         .catch(error=>{
@@ -55,6 +59,7 @@ const Register = () => {
 
     return (
         <div>
+             <Helmet><title>Offer Hive | Register</title></Helmet>
         <div className="hero min-h-screen  font-Sora py-20">
         <div className="hero-content flex  justify-center mx-auto lg:flex-row-reverse">
             <div className="text-center lg:text-left hidden lg:block md:block flex-1 ">
