@@ -49,7 +49,7 @@ const Navbar = () => {
                 {navlinks}
                 </ul>
                 </div>
-                <p className="btn btn-ghost normal-case lg:text-2xl md:text-2xl text-xl font-Sora font-semibold"><SiWorkplace className="font-semibold"></SiWorkplace>Offer Hive</p>
+                <p className="btn btn-ghost normal-case lg:text-2xl md:text-2xl text-[14px] font-Sora font-semibold"><SiWorkplace className="font-semibold"></SiWorkplace>Offer Hive</p>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
