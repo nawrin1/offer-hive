@@ -47,15 +47,15 @@ const JobDetails = () => {
 
     }
     return (
-        <div className="min-h-screen my-12 max-w-6xl mx-auto">
-            <h2 className="text-center font-bold font-Sora text-5xl text-purple-900 mb-20">{jobtitle}</h2>
+        <div className="min-h-screen my-12 max-w-6xl mx-auto p-4">
+            <h2 className="text-center font-bold font-Sora text-3xl lg:text-5xl md:text-4xl text-purple-900 mb-20">{jobtitle}</h2>
             <div className="flex">
                 <div>
                     <p className="lg:text-2xl md:text-2xl mb-24 lg:leading-10 md:leading-10 text-justify text-slate-600">{description}</p>
-                    <div className="text-3xl font-Sora font-semibold">
+                    <div className="lg:text-3xl text-2xl font-Sora font-semibold w-full">
                         <p className="mb-10 text-blue-900">Deadline:  {deadline}</p>
                         {/* <p>Price  Range:  {price} </p> */}
-                        <div className="flex"><p>Price  Range:  {max}-{min} </p><FaDollarSign></FaDollarSign></div>
+                        <div className="flex"><p>Price  Range:  {max}-{min} </p ><FaDollarSign className="hidden lg:block md:block"></FaDollarSign></div>
                     </div>
                 </div>
                 <div>

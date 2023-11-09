@@ -47,7 +47,7 @@ const Updated = () => {
 
     }
     return (
-        <div className="bg-[#c4dde9] p-16">
+        <div className="bg-[#c4e0e9] p-16">
             <h2 className="text-center font-bold text-4xl mb-20">Update Jobs</h2>
             
         <form onSubmit={handleUpdatedJobs}>
