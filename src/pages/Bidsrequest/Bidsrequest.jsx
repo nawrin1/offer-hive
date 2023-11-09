@@ -87,7 +87,7 @@ const Bidsrequest = () => {
             <div className="overflow-x-auto">
                 <table className="table table-xs overflow-x-hidden">
                     <thead className="lg:text-2xl md:text-2xl text-[11px] font-semibold font-Sora bg-violet-300">
-                        <tr>
+                        <tr >
                             <th>Job Title</th>
                             <th>Email</th>
                             <th>Deadline</th>
@@ -99,7 +99,7 @@ const Bidsrequest = () => {
                     </thead>
                     <tbody className="font-semibold font-Sora bg-violet-100">
                         {request.map(bids => (
-                            <tr className="border-b-purple-600" key={bids._id}>
+                            <tr className="border-b-purple-600 h-[80px]" key={bids._id}>
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.title}</td>
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.userEmail}</td>
                                 <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.deadline}</td>

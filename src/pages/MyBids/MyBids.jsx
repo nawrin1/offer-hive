@@ -63,7 +63,7 @@ const MyBids = () => {
               </thead>
               <tbody className="font-semibold font-Sora bg-violet-100">
                 {allBids.map((bids) => (
-                  <tr className="border-b-purple-600" key={bids._id}>
+                  <tr className="border-b-purple-600 h-[80px]" key={bids._id}>
                     <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.title}</td>
                     <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.userEmail}</td>
                     <td className="lg:text-[14px] md:text-[14px] text-[10px]">{bids.deadline}</td>
