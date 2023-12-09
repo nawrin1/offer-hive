@@ -13,7 +13,7 @@ This website is related to posting jobs where bidders can bid for jobs and the p
 # Tools and Technologies:
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=css,html,tailwind,js,react,mongodb,nodejs,express,firebase,vercel" />
+    <img src="https://skillicons.dev/icons?i=css,html,tailwind,js,react,mongodb,nodejs,express,firebase" />
   </a>
 </p>
 <div align="center">
