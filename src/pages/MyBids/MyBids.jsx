@@ -33,7 +33,7 @@ const MyBids = () => {
         setDisappear(updatedDisappear);
     
         // Send the status update to the server
-        const status = { status: 'complete' };
+        const status = { status: 'complete' } 
         fetch(`https://online-marketplace-server-beta.vercel.app/allBids/${_id}`, {
           method: 'PUT',
           headers: {

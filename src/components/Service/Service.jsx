@@ -22,7 +22,7 @@ const Service = ({service}) => {
                 </div>
 
             </div>
-            <Link to={`/details/${_id}`}><div className="flex-1/3 mt-auto"><button className="btn btn-outline bg-purple-900 text-2xl text-white">Bid Now</button></div></Link>
+            <Link to={`details/${_id}`}><div className="flex-1/3 mt-auto"><button className="btn btn-outline bg-purple-900 text-2xl text-white">Bid Now</button></div></Link>
             
         </div>
     );

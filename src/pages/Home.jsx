@@ -3,9 +3,15 @@ import Banner from "../components/Banner/Banner";
 import Facilities from "../components/Banner/Facilities/Facilities";
 import Items from "../components/Items/Items";
 import Section from "../components/Section/Section";
+import { useEffect } from "react";
+import Aos from "aos";
 
 
 const Home = () => {
+    useEffect(() => {
+        Aos.init();
+        Aos.refresh();
+      }, []);
     return (
         
         <div>
